@@ -22,12 +22,41 @@
             messagingSenderId: "281039563285"
         };
         firebase.initializeApp(config);
+
+        // Initialize Cloud Firestore through Firebase
+        var db = firebase.firestore();
+
+        db.collection("test-collection").add({
+            first: "Ada",
+            last: "Lovelace",
+            born: 1815
+        })
+            .then(function (docRef) {
+                console.log("Document written with ID: ", docRef.id);
+            })
+            .catch(function (error) {
+                console.error("Error adding document: ", error);
+            });
+
+        db.collection("test-collection").get().then((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+                var el = document.createElement('LI');
+                el.textContent = `${doc.id} => ${doc.data().first + ' ' + doc.data().last + ' ' + doc.data().born}`
+                var list = document.getElementById('test-list');
+                list.appendChild(el);
+            });
+        });
+
     </script>
 </head>
 
 <body>
     <!-- react mount point -->
     <div id="root"></div>
+    <ul id="test-list">
+
+    </ul>
+
 </body>
 
 </html>
