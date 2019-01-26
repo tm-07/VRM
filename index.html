@@ -38,11 +38,22 @@
                 console.error("Error adding document: ", error);
             });
 
+        db.collection("test-collection").get().then((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+                var el = document.createElement('LI');
+                el.textContent = `${doc.id} => ${doc.data().first + ' ' + doc.data().last + ' ' + doc.data().born}`
+                var list = document.getElementById('test-list');
+                list.appendChild(el);
+            });
+        });
+
     </script>
 </head>
 
 <body>
+    <ul id="test-list">
 
+    </ul>
 
 </body>
 
