@@ -26,6 +26,7 @@
         // Initialize Cloud Firestore through Firebase
         var db = firebase.firestore();
 
+        // add another ada lovelace to the collection
         db.collection("test-collection").add({
             first: "Ada",
             last: "Lovelace",
@@ -38,6 +39,7 @@
                 console.error("Error adding document: ", error);
             });
 
+        //read the ada lovelace collection and display it to test-list
         db.collection("test-collection").get().then((querySnapshot) => {
             querySnapshot.forEach((doc) => {
                 var el = document.createElement('LI');
