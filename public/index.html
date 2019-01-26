@@ -40,14 +40,33 @@
             });
 
         //read the ada lovelace collection and display it to test-list
-        db.collection("test-collection").get().then((querySnapshot) => {
-            querySnapshot.forEach((doc) => {
-                var el = document.createElement('LI');
-                el.textContent = `${doc.id} => ${doc.data().first + ' ' + doc.data().last + ' ' + doc.data().born}`
-                var list = document.getElementById('test-list');
-                list.appendChild(el);
-            });
-        });
+        // db.collection("test-collection").get().then((querySnapshot) => {
+        //     querySnapshot.forEach((doc) => {
+        //         var el = document.createElement('LI');
+        //         el.textContent = `${doc.id} => ${doc.data().first + ' ' + doc.data().last + ' ' + doc.data().born}`
+        //         var list = document.getElementById('test-list');
+        //         list.appendChild(el);
+        //     });
+        // });
+
+        function searchDB() {
+            debugger
+            var input = document.getElementById("search-input");
+            var inputText = input.value;
+            db.collection("business-collection").where("category", "==", inputText)
+                .get()
+                .then(function (querySnapshot) {
+                    querySnapshot.forEach(function (doc) {
+                        var el = document.createElement('LI');
+                        el.textContent = `${doc.data().name + ' ' + doc.data().address }`
+                        var list = document.getElementById('test-list');
+                        list.appendChild(el);
+                    });
+                })
+                .catch(function (error) {
+                    console.log("Error getting documents: ", error);
+                });
+        }
 
     </script>
 </head>
@@ -55,10 +74,10 @@
 <body>
     <!-- react mount point -->
     <div id="root"></div>
+    <input type="text" id="search-input"></input><button onclick="searchDB()">Search</button>
     <ul id="test-list">
 
     </ul>
-
 </body>
 
 </html>
