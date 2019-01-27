@@ -30,7 +30,6 @@ const renderContributions = ({ contributions }) => {
  */
 const DetailPage = ({ vendor = {}, handleBack, onClick = () => { } }) => {
   const { contributions = [] } = vendor;
-  console.log('data', vendor);
   return (
     <div className="detail-container">
       <div className="block-background">
