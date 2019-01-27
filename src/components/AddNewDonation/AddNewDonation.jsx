@@ -13,21 +13,21 @@ const AddNewDonation = ({ handleBack }) => {
       <form>
         <div id="details-first-row">
           <span>
-            <label for="contributionField">Contribution type<font color="red">*</font></label>
-            <input type="email" class="form-control" id="contributionField" />
+            <label htmlFor="contributionField">Contribution type<font color="red">*</font></label>
+            <input type="email" className="form-control" id="contributionField" />
           </span>
           <span>
-            <label for="dateField">Date</label>
-            <input type="email" class="form-control" id="dateField" />
+            <label htmlFor="dateField">Date</label>
+            <input type="email" className="form-control" id="dateField" />
           </span>
         </div>
         <div id="details-second-row">
-          <label for="valueField">Value</label>
-          <input type="email" class="form-control" id="valueField" />
+          <label htmlFor="valueField">Value</label>
+          <input type="email" className="form-control" id="valueField" />
         </div>
         <div id="details-third-row">
-          <label for="noteField">Notes</label>
-          <textarea type="email" class="form-control" id="noteField" />
+          <label htmlFor="noteField">Notes</label>
+          <textarea type="email" className="form-control" id="noteField" />
         </div>
       </form>
       <button
