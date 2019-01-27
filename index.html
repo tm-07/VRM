@@ -1,0 +1,46 @@
+<html><head><link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous"><script src="https://www.gstatic.com/firebasejs/5.8.1/firebase.js"></script><script src="https://www.gstatic.com/firebasejs/5.8.1/firebase-app.js"></script><script src="https://www.gstatic.com/firebasejs/5.8.1/firebase-auth.js"></script><script src="https://www.gstatic.com/firebasejs/5.8.1/firebase-database.js"></script><script src="https://www.gstatic.com/firebasejs/5.8.1/firebase-firestore.js"></script><script src="https://www.gstatic.com/firebasejs/5.8.1/firebase-messaging.js"></script><script src="https://www.gstatic.com/firebasejs/5.8.1/firebase-functions.js"></script><script>// Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDvG0L7jF29RCxCA41YB8KHTI9y_mopd-o",
+            authDomain: "hack-a-wish-8d1f2.firebaseapp.com",
+            databaseURL: "https://hack-a-wish-8d1f2.firebaseio.com",
+            projectId: "hack-a-wish-8d1f2",
+            storageBucket: "hack-a-wish-8d1f2.appspot.com",
+            messagingSenderId: "281039563285"
+        };
+        firebase.initializeApp(config);
+
+        // Initialize Cloud Firestore through Firebase
+        var db = firebase.firestore();
+        window.db = db;
+
+        // add another ada lovelace to the collection
+        db.collection("test-collection").add({
+            first: "Ada",
+            last: "Lovelace",
+            born: 1815
+        })
+            .then(function (docRef) {
+                console.log("Document written with ID: ", docRef.id);
+            })
+            .catch(function (error) {
+                console.error("Error adding document: ", error);
+            });
+
+        function searchDB() {
+            debugger
+            var input = document.getElementById("search-input");
+            var inputText = input.value;
+            db.collection("business-collection").where("category", "==", inputText)
+                .get()
+                .then(function (querySnapshot) {
+                    querySnapshot.forEach(function (doc) {
+                        var el = document.createElement('LI');
+                        el.textContent = `${doc.data().name + ' ' + doc.data().address }`
+                        var list = document.getElementById('test-list');
+                        list.appendChild(el);
+                    });
+                })
+                .catch(function (error) {
+                    console.log("Error getting documents: ", error);
+                });
+        }</script><link href="/static/css/main.71cca571.chunk.css" rel="stylesheet"></head><body><div id="root"></div><ul id="test-list"></ul><script>!function(l){function e(e){for(var r,t,n=e[0],o=e[1],u=e[2],f=0,i=[];f<n.length;f++)t=n[f],p[t]&&i.push(p[t][0]),p[t]=0;for(r in o)Object.prototype.hasOwnProperty.call(o,r)&&(l[r]=o[r]);for(s&&s(e);i.length;)i.shift()();return c.push.apply(c,u||[]),a()}function a(){for(var e,r=0;r<c.length;r++){for(var t=c[r],n=!0,o=1;o<t.length;o++){var u=t[o];0!==p[u]&&(n=!1)}n&&(c.splice(r--,1),e=f(f.s=t[0]))}return e}var t={},p={2:0},c=[];function f(e){if(t[e])return t[e].exports;var r=t[e]={i:e,l:!1,exports:{}};return l[e].call(r.exports,r,r.exports,f),r.l=!0,r.exports}f.m=l,f.c=t,f.d=function(e,r,t){f.o(e,r)||Object.defineProperty(e,r,{enumerable:!0,get:t})},f.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},f.t=function(r,e){if(1&e&&(r=f(r)),8&e)return r;if(4&e&&"object"==typeof r&&r&&r.__esModule)return r;var t=Object.create(null);if(f.r(t),Object.defineProperty(t,"default",{enumerable:!0,value:r}),2&e&&"string"!=typeof r)for(var n in r)f.d(t,n,function(e){return r[e]}.bind(null,n));return t},f.n=function(e){var r=e&&e.__esModule?function(){return e.default}:function(){return e};return f.d(r,"a",r),r},f.o=function(e,r){return Object.prototype.hasOwnProperty.call(e,r)},f.p="/";var r=window.webpackJsonp=window.webpackJsonp||[],n=r.push.bind(r);r.push=e,r=r.slice();for(var o=0;o<r.length;o++)e(r[o]);var s=n;a()}([])</script><script src="/static/js/1.fa92c112.chunk.js"></script><script src="/static/js/main.7252e1ce.chunk.js"></script></body></html>
