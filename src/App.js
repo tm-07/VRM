@@ -85,7 +85,6 @@ class App extends Component {
         const data = [];
         querySnapshot.forEach((doc) => {
           // David render card with data
-          console.log(doc.data());
           data.push(doc.data());
         });
         this.setState({
