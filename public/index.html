@@ -27,6 +27,7 @@
 
         // Initialize Cloud Firestore through Firebase
         var db = firebase.firestore();
+        window.db = db;
 
         // add another ada lovelace to the collection
         db.collection("test-collection").add({
