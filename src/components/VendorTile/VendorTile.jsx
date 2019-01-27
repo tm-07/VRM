@@ -1,12 +1,13 @@
 import React from 'react';
 
 const ActionButton = ({ onClick, view, index }) => {
-  const text = (view === 'SEARCH') ? 'Details' : 'Add Donation';
+  const text = (view === 'SEARCH') ? 'Details' : '';
   const action = (view === 'SEARCH')
     ? () => onClick(index)
     : onClick;
 
   return (
+    text !== '' ?
     <button
       type="button"
       className="btn btn-primary details-button"
@@ -14,6 +15,8 @@ const ActionButton = ({ onClick, view, index }) => {
     >
       {text}
     </button>
+    :
+    null
   );
 }
 
