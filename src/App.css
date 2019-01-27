@@ -19,8 +19,12 @@
 @keyframes fade{
   from{
     opacity :0 ;
+    transform: translateY(10%)
+
   }to{
     opacity: 100%;
+    transform: translateY(0%)
+
   }
 }
 
@@ -32,7 +36,7 @@
 }
 
 .fade-animation{
-  animation: fade .3s forwards;
+  animation: fade .5s forwards;
 }
 
 #dateField {
@@ -278,6 +282,19 @@ textarea {
 .contributions {
   padding: 2em;
 }
+.contribution-table{
+  width: 60rem;;
+
+  max-width: 100%;
+}
+.contribution-title{
+  width: 50rem;
+  max-width: 80%;
+}
+.donation-button{
+  width: 10rem;
+  max-width: 20%;
+}
 
 .flex-row {
   display: flex;
@@ -291,4 +308,5 @@ textarea {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  width: 100%;
 }
