@@ -25,7 +25,6 @@ const VendorTile = ({ vendor, index, onClick, view }) => {
   const {
     name = '',
     address = '',
-    updated = '',
     status = '',
     primaryContact = {},
     website = ''
