@@ -28,7 +28,11 @@ const renderContributions = ({ contributions }) => {
 /**
  * Render a detail page for a single vendor
  */
-const DetailPage = ({ vendor = {}, handleBack, onClick = () => { } }) => {
+const DetailPage = ({
+  vendor = {},
+  handleBack,
+  onClick = () => { },
+}) => {
   const { contributions = [] } = vendor;
   return (
     <div className="detail-container">
@@ -41,7 +45,7 @@ const DetailPage = ({ vendor = {}, handleBack, onClick = () => { } }) => {
       <div className="contributions">
         <div className="flex-row">
           <h2>Contribution History</h2>
-          <button className="btn btn-primary">+ Add New Donation</button>
+          <button className="btn btn-primary" onClick={onClick}>+ Add New Donation</button>
         </div>
         <div className="contribution table">
           <table className="table">
