@@ -74,7 +74,7 @@ class App extends Component {
 
   handleChange = (e) => {
     this.setState({
-      searchString: e.target.value
+      searchString: e.target.value.toLowerCase()
     });
   }
 

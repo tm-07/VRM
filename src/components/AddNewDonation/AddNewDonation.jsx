@@ -32,7 +32,7 @@ const AddNewDonation = ({ handleBack }) => {
       </form>
       <button
         id="save-button"
-        onClick={null}
+        onClick={() => handleBack()}
       >
         Save
       </button>
