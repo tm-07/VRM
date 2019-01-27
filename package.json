@@ -34,7 +34,7 @@
   "bugs": {
     "url": "https://github.com/tm-07/VRM/issues"
   },
-  "homepage": "https://tm-07.github.io/",
+  "homepage": "https://tm-07.github.io/VRM/",
   "devDependencies": {
     "gh-pages": "^2.0.1"
   }
