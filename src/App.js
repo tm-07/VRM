@@ -117,7 +117,7 @@ class App extends Component {
           <main>
             <div className="main-page">
               <p className="form-title">
-                Vendor Relationship Manager
+                Vendor Relationship Manager 1.0
               </p>
               <div className="intro-search">
                 <img
@@ -147,7 +147,7 @@ class App extends Component {
             </button>
               </div>
               {this.state.currentSearch !== '' ?
-                <p>{this.state.currentSearch}</p>
+                <p class="keyword-text">keyword: {this.state.currentSearch}</p>
                 :
                 null
               }

@@ -66,8 +66,8 @@
 
 .main-page {
   /* background:url(https://i.stack.imgur.com/Ux7SR.png);
-  background-size: 20em; */
-  background:grey;
+  background-size: 50em; */
+  background:whitesmoke;
   padding-top: 50px;
   font-family: "Arial";
   min-height: 100vh;
@@ -177,9 +177,30 @@ h3, h6 {
   color:#7ed321;
 }
 
+.status-unknown{
+  color:grey;
+}
+
 .status-unhelpful{
   color:#d0021b;
 }
+
+
+.border-helpful{
+  border-left:#7ed321 solid 20px;
+}
+
+.border-unknown{
+  border-left:grey solid 20px;
+
+}
+
+.border-unhelpful{
+  border-left:#d0021b solid 20px;
+}
+
+
+
 .search-bar-input{
   height:2em;
   font-size:3em;
@@ -194,4 +215,9 @@ textarea {
 
 .back-button {
 
+}
+
+.keyword-text{
+  font-size: 2em;
+  font-weight: bold;
 }

@@ -15,7 +15,7 @@ const VendorTile = ({ vendor, onClick }) => {
   } = vendor;
 
   return (
-    <div className="vendor-container">
+    <div className={"vendor-container border-"+status}>
       {/* <div className="vendor-img" /> */}
       <div className="row">
         <div className="col-sm-6 vender-header">{name}</div>
