@@ -131,7 +131,7 @@ class App extends Component {
                   <div className="form-group">
                     <input
                       type="text"
-                      className="form-control"
+                      className="form-control search-bar-input"
                       id="formGroupExampleInput"
                       placeholder={this.state.placeholder}
                       onChange={this.handleChange}
