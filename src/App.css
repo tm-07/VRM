@@ -260,3 +260,17 @@ textarea {
   font-size: 2em;
   font-weight: bold;
 }
+
+/* Detail Page */
+.block-background {
+  padding: 1em;
+  width: 100vw;
+  background-color: gray;
+
+}
+
+.back-button {
+  margin-bottom: 1em;
+  border-radius: 2px;
+  color: black;
+}
