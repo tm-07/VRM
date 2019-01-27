@@ -23,14 +23,13 @@
 .main-page {
   padding-top: 50px;
   font-family: "Arial";
-  font-weight: 900;
   background-color: white;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  font-size: calc(10px + 2vmin);
+  font-size: 1em;
   color: black;
 }
 
@@ -82,6 +81,12 @@
 
 .vender-header {
   margin-left: 1rem;
+  font-size:1.5em;
+  font-weight: bold;
+}
+
+.vendor-status{
+  text-align: right;
 }
 
 .vendor-row {
@@ -99,4 +104,9 @@ p {
 
 h3, h6 {
   color: #006bb7 !important;
+}
+
+.data-header{
+  font-size: 1.25em; 
+  font-weight: bold; 
 }

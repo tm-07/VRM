@@ -10,40 +10,46 @@ const VendorTile = ({ vendor, onClick }) => {
     address = '',
     updated = '',
     status = '',
-    contact = {},
+    primaryContact = {},
+    website = ''
   } = vendor;
-
-  const {
-    name: contactName = '',
-    phone = '',
-    email = '',
-  } = contact;
+  console.log(primaryContact);
 
   return (
     <div className="vendor-container">
       {/* <div className="vendor-img" /> */}
-      <h3 className="vender-header">{name}</h3>
-      <div className="row vendor-row">
-        <div className="col-sm-4">
-          <h6>Address</h6>
-          <p>{address}</p>
-          {/* <p>{address.city}, {address.state} {address.zip}</p> */}
+      <div className="row">
+        <div className="col-sm-6 vender-header">{name}</div>
+        <div className="col-sm-5 vendor-status">{status}</div>
+      </div>
+      <div className="row">
+      <div className="col-sm-6">
+        <div className="row vendor-row">
+          <div className="col-sm-12">
+            <div className="data-header">Address</div>
+            <p>{address}</p>
+            <div className="data-header">Website</div>
+            <p>{website}</p>
+          </div>
         </div>
-        <div className="col-sm-4">
-          <h6>Primary Contact</h6>
-          <p>Name: {contactName}</p>
-          <p>Phone: {phone}</p>
-          <p>Email: {email}</p>
         </div>
-        <div className="col-sm-1">
-          <button
-            type="button"
-            className="btn btn-primary"
-            onClick={onClick}
-          >
-            Details
-          </button>
+        <div className="col-sm-6">
+        <div className="row vendor-row">
+          <div className="col-sm-8">
+            <h6>Primary Contact</h6>
+            <p>Name: {primaryContact.name}</p>
+            <p>Phone: {primaryContact.phone}</p>
+            <p>Email: {primaryContact.email}</p>
+            <button
+                        type="button"
+                        className="btn btn-primary"
+                        onClick={onClick}
+                      >
+                        Details
+                      </button>
+          </div>
         </div>
+      </div>
       </div>
     </div>
   );
