@@ -269,6 +269,9 @@ h3, h6 {
   height:2em;
   font-size:3em;
 }
+.search-bar-input:hover{
+  cursor:url(https://cdn2.iconfinder.com/data/icons/iconza/iconza_32x32_df086d/lens.png), pointer;
+}
 #new-donation-text {
   font-weight: 700;
   text-align: center;
