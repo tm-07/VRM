@@ -9,11 +9,17 @@ import VendorTile from './components/VendorTile/VendorTile';
  *   name: string;
  */
 
+const VIEW = {
+  SEARCH: 'SEARCH',
+  DETAIL: 'DETAIL',
+};
+
 class App extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
+      view: VIEW.SEARCH,
       searchString: '',
       currentSearch: '',
       data: [],
@@ -28,8 +34,12 @@ class App extends Component {
   renderTiles = () => {
     const { data } = this.state;
     return data.map((d, i) => (
-      <VendorTile vendor={d} key={i} />
+      <VendorTile vendor={d} key={i} onClick={this.navigateToDetailPage} />
     ));
+  }
+
+  navigateToDetailPage = () => {
+    this.setState({ view: VIEW.DETAIL });
   }
 
   handleSubmit = (e) => {
@@ -84,48 +94,63 @@ class App extends Component {
   }
 
   render() {
-    return (
-      <main>
-        <div className="main-page">
-          <p className="form-title">
-            Vendor Relationship Manager
-          </p>
-          <div className="intro-search">
-            <img
-              src={require('./images/Make-A-Wish_small_logo.png')}
-              className="medium-logo"
-              alt="logo"
-              height="36"
-              width="36"
-            />
-            <form onSubmit={this.handleSubmit}>
-              <div className="form-group">
-                <input
-                  type="text"
-                  className="form-control"
-                  id="formGroupExampleInput"
-                  placeholder={this.state.placeholder}
-                  onChange={this.handleChange}
-                  value={this.state.searchString}
-                />
-              </div>
-            </form>
-            <button
-              className="clear-button"
-              onClick={this.handleClear}
-            >
-              Clear
-            </button>
+    const { view } = this.state;
+
+    switch (view) {
+      case VIEW.DETAIL: {
+        // this will be the details page component
+        return (
+          <div>
+
           </div>
-          {this.state.currentSearch !== '' ?
-            <p>Results for: {this.state.currentSearch}</p>
-            :
-            null
-          }
-          {this.renderTiles()}
-        </div>
-      </main>
-    );
+        );
+      }
+
+      default: {
+        return (
+          <main>
+            <div className="main-page">
+              <p className="form-title">
+                Vendor Relationship Manager
+              </p>
+              <div className="intro-search">
+                <img
+                  src={require('./images/Make-A-Wish_small_logo.png')}
+                  className="medium-logo"
+                  alt="logo"
+                  height="36"
+                  width="36"
+                />
+                <form onSubmit={this.handleSubmit}>
+                  <div className="form-group">
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="formGroupExampleInput"
+                      placeholder={this.state.placeholder}
+                      onChange={this.handleChange}
+                      value={this.state.searchString}
+                    />
+                  </div>
+                </form>
+                <button
+                  className="clear-button"
+                  onClick={this.handleClear}
+                >
+                  Clear
+            </button>
+              </div>
+              {this.state.currentSearch !== '' ?
+                <p>Results for: {this.state.currentSearch}</p>
+                :
+                null
+              }
+              {this.renderTiles()}
+            </div>
+          </main>
+        );
+      }
+    }
   }
 }
 
