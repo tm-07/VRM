@@ -4,7 +4,7 @@ import React from 'react';
  * Render a Tile containing basic vendor information
  *
  */
-const VendorTile = ({ vendor, onClick }) => {
+const VendorTile = ({ vendor, index, onClick }) => {
   const {
     name = '',
     address = '',
@@ -13,9 +13,9 @@ const VendorTile = ({ vendor, onClick }) => {
     primaryContact = {},
     website = ''
   } = vendor;
-
+  console.log(index);
   return (
-    <div className={"vendor-container border-"+status}>
+    <div className={"vendor-container border-"+status + " " + (index % 2 ==0 ? "slide-from-left" : "slide-from-right") }>
       {/* <div className="vendor-img" /> */}
       <div className="row">
         <div className="col-sm-6 vender-header">{name}</div>

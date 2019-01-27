@@ -36,7 +36,7 @@ class App extends Component {
   renderTiles = () => {
     const { data } = this.state;
     return data.map((d, i) => (
-      <VendorTile vendor={d} key={i} onClick={this.navigateToDetailPage} />
+      <VendorTile vendor={d} key={i} index={i} onClick={this.navigateToDetailPage} />
     ));
   }
 
@@ -139,7 +139,7 @@ class App extends Component {
               </div>
               
               {this.state.currentSearch !== '' ?
-                <p class="keyword-text">keyword: {this.state.currentSearch}<button
+                <p className="keyword-text">keyword: {this.state.currentSearch}<button
                 className="clear-button"
                 onClick={this.handleClear}
               >
