@@ -46,6 +46,12 @@ class App extends Component {
     ));
   }
 
+  handleBackToDetailPage = () => {
+    this.setState({
+      view: VIEW.DETAIL,
+    });
+  }
+
   navigateToDetailPage = (index) => {
     this.setState({
       view: VIEW.DETAIL,
@@ -121,7 +127,7 @@ class App extends Component {
       }
 
       case VIEW.ADD: {
-        return <AddNewDonation handleBack={this.handleBack} />
+        return <AddNewDonation handleBack={this.handleBackToDetailPage} />
       }
 
       default: {
