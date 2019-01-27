@@ -1,7 +1,6 @@
 #formGroupExampleInput {
   width: 700;
 }
-
 .clear-button {
   background-color: white;
   color: black;
@@ -21,9 +20,11 @@
 }
 
 .main-page {
+  /* background:url(https://i.stack.imgur.com/Ux7SR.png);
+  background-size: 20em; */
+  background:grey;
   padding-top: 50px;
   font-family: "Arial";
-  background-color: white;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -43,6 +44,8 @@
   align-items: flex-start;
   border-radius: 5px;
   margin-right: 5px;
+  height:6em;
+  width:6em;
 }
 
 .small-logo {
@@ -60,10 +63,15 @@
 .vendor-container {
   width: 100%;
   max-width: 60rem;
-  margin: 1em;
+  margin-bottom: 1em;
 
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
+  padding: 1em;
+  box-shadow: 10px 10px;
+  border:1px solid black;
+  background:white;
+
 }
 
 .vendor-img {
@@ -75,12 +83,11 @@
   background-repeat: no-repeat;
 }
 
-.vendor-container:hover {
+/* .vendor-container:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-}
+} */
 
 .vender-header {
-  margin-left: 1rem;
   font-size:1.5em;
   font-weight: bold;
 }
@@ -90,7 +97,7 @@
 }
 
 .vendor-row {
-  padding: 1em;
+  /* padding: 1em; */
 }
 
 /* global resets */
@@ -113,6 +120,18 @@ h3, h6 {
 
 .details-button{
   position: absolute;
-  right: 5%;
+  right: 1em;
   top: 40%;
+}
+
+.status-helpful{
+  color:#7ed321;
+}
+
+.status-unhelpful{
+  color:#d0021b;
+}
+.form-control{
+  height:2em;
+  font-size:3em;
 }

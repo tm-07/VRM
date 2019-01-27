@@ -141,7 +141,7 @@ class App extends Component {
             </button>
               </div>
               {this.state.currentSearch !== '' ?
-                <p>Results for: {this.state.currentSearch}</p>
+                <p>{this.state.currentSearch}</p>
                 :
                 null
               }
