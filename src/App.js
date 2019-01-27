@@ -46,10 +46,10 @@ class App extends Component {
     ));
   }
 
-  navigateToDetailPage = () => {
+  navigateToDetailPage = (index) => {
     this.setState({
       view: VIEW.DETAIL,
-      selectedTile: 0,
+      selectedTile: index,
     });
   }
 
