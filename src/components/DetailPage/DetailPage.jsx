@@ -43,24 +43,26 @@ const DetailPage = ({
         </div>
       </div>
       <div className="contributions">
-        <div className="flex-row">
-          <h2>Contribution History</h2>
-          <button className="btn btn-primary" onClick={onClick}>+ Add New Contribution</button>
+        <div className="flex-row-centered">
+          <h2 className="contribution-title">Contribution History</h2>
+          <button className="btn btn-primary donation-button" onClick={onClick}>+ New Donation</button>
         </div>
-        <div className="contribution table">
-          <table className="table">
-            <thead>
-              <tr>
-                <th scope="col">Type</th>
-                <th scope="col">Contribution</th>
-                <th scope="col">Comment</th>
-                <th scope="col">Date</th>
-              </tr>
-            </thead>
-            <tbody>
-              {renderContributions({ contributions })}
-            </tbody>
-          </table>
+        <div className="flex-row-centered">
+          <div className="contribution-table">
+            <table className="table">
+              <thead>
+                <tr>
+                  <th scope="col">Type</th>
+                  <th scope="col">Contribution</th>
+                  <th scope="col">Comment</th>
+                  <th scope="col">Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                {renderContributions({ contributions })}
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div >
