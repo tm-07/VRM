@@ -1,9 +1,11 @@
 @keyframes slide-from-left{
   from{
-    transform: translateX(-100%)
+    transform: translateX(-100%);
+    opacity:0;
   }
   to{
     transform: translateX(0%);
+    opacity:100%;
   }
 }
 @keyframes slide-from-right{
@@ -14,11 +16,23 @@
     transform: translateX(0%);
   }
 }
+@keyframes fade{
+  from{
+    opacity :0 ;
+  }to{
+    opacity: 100%;
+  }
+}
+
 .slide-from-left{
   animation: slide-from-left .3s forwards;
 }
 .slide-from-right{
   animation: slide-from-right .3s forwards;
+}
+
+.fade-animation{
+  animation: fade .3s forwards;
 }
 
 #dateField {
@@ -90,7 +104,7 @@
   background-size: 50em; */
   background:whitesmoke;
   padding-top: 50px;
-  font-family: "Arial";
+  font-family: 'Lato', sans-serif;
   min-height: 100vh;
   display: flex;
   flex-direction: column;

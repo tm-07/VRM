@@ -15,7 +15,7 @@ const VendorTile = ({ vendor, index, onClick }) => {
   } = vendor;
   console.log(index);
   return (
-    <div className={"vendor-container border-"+status + " " + (index % 2 ==0 ? "slide-from-left" : "slide-from-right") }>
+    <div className={"vendor-container border-"+status + " fade-animation" }>
       {/* <div className="vendor-img" /> */}
       <div className="row">
         <div className="col-sm-6 vender-header">{name}</div>
