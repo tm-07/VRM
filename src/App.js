@@ -150,7 +150,7 @@ class App extends Component {
                   </div>
                 </form>
                 <button
-                  className="clear-button"
+                  className="btn btn-small clear-button"
                   onClick={this.handleClear}
                 >
                   Clear
