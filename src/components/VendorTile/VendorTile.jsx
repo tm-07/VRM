@@ -31,7 +31,6 @@ const VendorTile = ({ vendor, index, onClick, view }) => {
   } = vendor;
   return (
     <div className={"vendor-container border-" + status + " fade-animation"}>
-      {/* <div className="vendor-img" /> */}
       <div className="row">
         <div className="col-sm-6 vender-header">{name}</div>
         <div className={"col-sm-6 vendor-status status-" + status}>{status.substring(0, 1).toUpperCase() + status.substring(1)}</div>
