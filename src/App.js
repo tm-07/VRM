@@ -12,6 +12,7 @@ import VendorTile from './components/VendorTile/VendorTile';
 const VIEW = {
   SEARCH: 'SEARCH',
   DETAIL: 'DETAIL',
+  ADD: 'ADD',
 };
 
 class App extends Component {
@@ -38,8 +39,15 @@ class App extends Component {
     ));
   }
 
+  // simple state based routing functions
   navigateToDetailPage = () => {
     this.setState({ view: VIEW.DETAIL });
+  }
+  navigateToAddPage = () => {
+    this.setState({ view: VIEW.ADD });
+  }
+  navigateToSearchPage = () => {
+    this.setState({ view: VIEW.SEARCH });
   }
 
   handleSubmit = (e) => {
@@ -99,6 +107,14 @@ class App extends Component {
     switch (view) {
       case VIEW.DETAIL: {
         // this will be the details page component
+        return (
+          <div>
+
+          </div>
+        );
+      }
+
+      case VIEW.ADD: {
         return (
           <div>
 
