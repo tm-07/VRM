@@ -37,9 +37,11 @@ const DetailPage = ({ vendor = {}, handleBack, onClick = () => { } }) => {
         <button className="btn btn-primary back-button" onClick={handleBack}>Back</button>
         <VendorTile vendor={vendor} onClick={onClick} view="DETAIL" />
       </div>
-      <div className="history">
-        <h2>Contribution History</h2>
-        <button>+ Add New Donation</button>
+      <div className="contributions">
+        <div className="flex-row">
+          <h2>Contribution History</h2>
+          <button className="btn btn-primary">+ Add New Donation</button>
+        </div>
         <div className="contribution table">
           <table className="table">
             <thead>
@@ -56,7 +58,7 @@ const DetailPage = ({ vendor = {}, handleBack, onClick = () => { } }) => {
           </table>
         </div>
       </div>
-    </div>
+    </div >
   );
 }
 

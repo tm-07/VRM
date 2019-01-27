@@ -274,3 +274,14 @@ textarea {
   border-radius: 2px;
   color: black;
 }
+
+.contributions {
+  padding: 2em;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
