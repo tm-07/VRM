@@ -1,5 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
+import VendorTile from './components/VendorTile/VendorTile';
+
+/**
+ * Data interface
+ *  address: string
+ *   category: string;
+ *   name: string;
+ */
 
 class App extends Component {
 
@@ -9,6 +17,13 @@ class App extends Component {
       searchString: '',
       data: []
     };
+  }
+
+  renderTiles = () => {
+    const { data } = this.state;
+    return data.map((d, i) => (
+      <VendorTile vendor={d} key={i} />
+    ))
   }
 
   handleSubmit = (e) => {
@@ -72,6 +87,7 @@ class App extends Component {
               </div>
             </form>
           </div>
+          {this.renderTiles()}
         </div>
       </main>
     );
