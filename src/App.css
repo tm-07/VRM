@@ -110,3 +110,9 @@ h3, h6 {
   font-size: 1.25em; 
   font-weight: bold; 
 }
+
+.details-button{
+  position: absolute;
+  right: 5%;
+  top: 40%;
+}

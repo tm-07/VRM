@@ -35,14 +35,12 @@ const VendorTile = ({ vendor, onClick }) => {
         </div>
         <div className="col-sm-6">
         <div className="row vendor-row">
-          <div className="col-sm-8">
-            <h6>Primary Contact</h6>
-            <p>Name: {primaryContact.name}</p>
-            <p>Phone: {primaryContact.phone}</p>
-            <p>Email: {primaryContact.email}</p>
+          <div className="col-sm-12">
+          <div className="data-header">Primary Contact</div>
+            <p>Name: {primaryContact.name}<br/>Phone: {primaryContact.phone}<br/>Email: {primaryContact.email}</p>
             <button
                         type="button"
-                        className="btn btn-primary"
+                        className="btn btn-primary details-button"
                         onClick={onClick}
                       >
                         Details
