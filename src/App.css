@@ -19,11 +19,11 @@
 @keyframes fade{
   from{
     opacity :0 ;
-    transform: translateY(10%)
+    transform: translateY(1em)
 
   }to{
     opacity: 100%;
-    transform: translateY(0%)
+    transform: translateY(0em)
 
   }
 }
