@@ -116,9 +116,6 @@ class App extends Component {
         return (
           <main>
             <div className="main-page">
-              <p className="form-title">
-                Vendor Relationship Manager 1.0
-              </p>
               <div className="intro-search">
                 <img
                   src={require('./images/Make-A-Wish_small_logo.png')}
@@ -139,15 +136,15 @@ class App extends Component {
                     />
                   </div>
                 </form>
-                <button
-                  className="clear-button"
-                  onClick={this.handleClear}
-                >
-                  Clear
-            </button>
               </div>
+              
               {this.state.currentSearch !== '' ?
-                <p class="keyword-text">keyword: {this.state.currentSearch}</p>
+                <p class="keyword-text">keyword: {this.state.currentSearch}<button
+                className="clear-button"
+                onClick={this.handleClear}
+              >
+                ❌
+          </button></p>
                 :
                 null
               }

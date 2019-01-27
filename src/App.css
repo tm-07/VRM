@@ -41,12 +41,10 @@
 }
 
 .clear-button {
-  background-color: white;
+  background:none;
+  border: none;
   color: black;
-  border: 2px solid #066bb7; /* Make-a-wish blue */
-  border-radius: 5px;
-  height: 40px;
-  margin-left: 10px;
+  font-size: .75em;
 }
 
 .clear-button:hover {
