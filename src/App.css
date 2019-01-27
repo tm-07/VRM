@@ -26,6 +26,16 @@
     transform: translateY(0em)
   }
 }
+@keyframes wiggle{
+  from{
+    transform: rotate(-1deg)
+  }
+  to{
+    transform: rotate(1deg)
+
+  }
+}
+
 
 .slide-from-left{
   animation: slide-from-left .3s forwards;
@@ -96,7 +106,14 @@
   background-color: lightgrey;
   cursor: pointer;
 }
+#logo:hover{
+  animation: wiggle 1s alternate infinite;
 
+}
+.btn-primary:hover{
+  animation: wiggle 1s alternate infinite;
+
+}
 .details-page {
   display: flex;
   flex-direction: column;

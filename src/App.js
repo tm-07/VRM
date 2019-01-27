@@ -150,6 +150,7 @@ class App extends Component {
                   alt="logo"
                   height="36"
                   width="36"
+                  id="logo"
                 />
                 <form onSubmit={this.handleSubmit}>
                   <div className="form-group">
