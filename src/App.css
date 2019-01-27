@@ -1,32 +1,53 @@
-.App {
-  text-align: center;
+#formGroupExampleInput {
+  width: 700;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+.backButton {
+  background-color: white;
+  color: black;
+  border: 2px solid #066bb7; /* Make-a-wish blue */
+  border-radius: 5px;
 }
 
-.App-header {
-  background-color: #282c34;
+.display-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50px;
+  color: black;
+}
+
+.form-title {
+  padding-top: 20px;
+}
+
+.intro-page {
+  padding-top: 50px;
+  font-family: "Arial";
+  font-weight: 900;
+  background-color: white;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: black;
 }
 
-.App-link {
-  color: #61dafb;
+.intro-search {
+  display: flex;
+  flex-direction: row;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.medium-logo {
+  display: flex;
+  align-items: flex-start;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+
+.small-logo {
+  border-radius: 5px;
+  margin-right: 10px;
 }
