@@ -34,7 +34,9 @@ const DetailPage = ({ vendor = {}, handleBack, onClick = () => { } }) => {
     <div className="detail-container">
       <div className="block-background">
         <button className="btn btn-primary back-button" onClick={handleBack}>Back</button>
-        <VendorTile vendor={vendor} onClick={onClick} view="DETAIL" />
+        <div className="flex-row-centered">
+          <VendorTile vendor={vendor} onClick={onClick} view="DETAIL" />
+        </div>
       </div>
       <div className="contributions">
         <div className="flex-row">
