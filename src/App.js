@@ -8,35 +8,52 @@ class App extends Component {
     this.state = {
       introPage: true,
       displayPage: false,
-      input: ''
+      searchString: '',
+      data: {}
     };
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleClick = this.handleClick.bind(this);
-    this.handleChange = this.handleChange.bind(this);
   }
 
-  handleSubmit(e) {
+  handleSubmit = (e) => {
     this.setState({
       introPage: false,
       displayPage: true
     });
+    this.searchDB();
     this.renderDisplayPage();
   }
 
-  handleClick(e) {
+  handleClick = (e) => {
     this.setState({
       introPage: true,
       displayPage: false,
-      input: ''
+      searchString: ''
     });
     this.renderIntroPage();
   }
 
-  handleChange(e) {
+  handleChange = (e) => {
     this.setState({
-      input: e.target.value
+      searchString: e.target.value
     });
   }
+
+  searchDB = () => {
+    let inputText = this.state.searchString;
+    window.db.collection("business-collection").where("category", "==", inputText)
+        .get()
+        .then((querySnapshot) => {
+            this.setState({
+              data: querySnapshot.docs
+            });
+            querySnapshot.forEach(function (doc) {
+                // David render card with data
+                console.log(doc);
+            });
+        })
+        .catch(function (error) {
+            console.log("Error getting documents: ", error);
+        });
+}
 
   renderIntroPage() {
     return (
@@ -96,7 +113,7 @@ class App extends Component {
                 Go back to start page
               </button>
             </div>
-            <p>List of vendors related to: {this.state.input}</p>
+            <p>List of vendors related to: {this.state.searchString}</p>
           </div>
           :
           this.renderIntroPage()

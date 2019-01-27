@@ -1,6 +1,8 @@
 <html>
 
 <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
     <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase.js"></script>
     <!-- Firebase App is always required and must be first -->
     <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase-app.js"></script>
@@ -25,6 +27,7 @@
 
         // Initialize Cloud Firestore through Firebase
         var db = firebase.firestore();
+        window.db = db;
 
         // add another ada lovelace to the collection
         db.collection("test-collection").add({
@@ -74,7 +77,6 @@
 <body>
     <!-- react mount point -->
     <div id="root"></div>
-    <input type="text" id="search-input"></input><button onclick="searchDB()">Search</button>
     <ul id="test-list">
 
     </ul>
