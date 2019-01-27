@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
-import './App.css';
+
 import VendorTile from './components/VendorTile/VendorTile';
+import AddNewDonation from './components/AddNewDonation/AddNewDonation';
+
+import './App.css';
 
 /**
  * Data interface
@@ -15,7 +18,6 @@ const VIEW = {
 };
 
 class App extends Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -66,6 +68,13 @@ class App extends Component {
     document.getElementById('formGroupExampleInput').focus();
   }
 
+  handleBack = () => {
+    this.setState({
+      view: VIEW.SEARCH,
+
+    });
+  }
+
   searchDB = () => {
     let inputText = this.state.searchString;
     window.db
@@ -76,7 +85,6 @@ class App extends Component {
         const data = [];
         querySnapshot.forEach((doc) => {
           // David render card with data
-          console.log(doc.data());
           data.push(doc.data());
         });
         this.setState({
@@ -100,9 +108,7 @@ class App extends Component {
       case VIEW.DETAIL: {
         // this will be the details page component
         return (
-          <div>
-
-          </div>
+          <AddNewDonation handleBack={this.handleBack}/>
         );
       }
 

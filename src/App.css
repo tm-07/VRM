@@ -1,6 +1,45 @@
+#dateField {
+  padding: 0;
+  margin: 0;
+}
+
+#details-first-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+#details-second-row {
+  margin-top: 20px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+#details-third-row {
+  margin-top: 20px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
 #formGroupExampleInput {
   width: 700;
 }
+
+#noteField {
+  height: 300;
+}
+
+#save-button {
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  color: black;
+  border: 2px solid #066bb7; /* Make-a-wish blue */
+  border-radius: 5px;
+  height: 40px;
+  width: 60px;
+}
+
 .clear-button {
   background-color: white;
   color: black;
@@ -13,6 +52,12 @@
 .clear-button:hover {
   background-color: lightgrey;
   cursor: pointer;
+}
+
+.details-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .form-title {
@@ -105,6 +150,10 @@ p {
   margin-bottom: 0.5rem !important;
 }
 
+#valueField {
+  width: 400px;
+}
+
 .list-group-item {
   padding: 0.25rem 1.25rem !important;
 }
@@ -134,4 +183,15 @@ h3, h6 {
 .form-control{
   height:2em;
   font-size:3em;
+}
+#new-donation-text {
+  font-weight: 700;
+}
+
+textarea {
+  resize: none;
+}
+
+.back-button {
+
 }

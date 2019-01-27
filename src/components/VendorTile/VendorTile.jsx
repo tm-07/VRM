@@ -13,7 +13,6 @@ const VendorTile = ({ vendor, onClick }) => {
     primaryContact = {},
     website = ''
   } = vendor;
-  console.log(primaryContact);
 
   return (
     <div className="vendor-container">
