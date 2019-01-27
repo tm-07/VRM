@@ -8,19 +8,19 @@ import DetailPage from './components/DetailPage/DetailPage';
 
 import './App.css';
 
-/**
- * Data interface
- *  address: string
- *   category: string;
- *   name: string;
- */
-
+/** Enum containing the view states */
 const VIEW = {
   SEARCH: 'SEARCH',
   DETAIL: 'DETAIL',
   ADD: 'ADD',
 };
 
+/**
+ * Primary application container
+ * 
+ * Holds entire application state, including the fetched vendor data,
+ * currently selected data, and "view" to show
+ */
 class App extends Component {
   constructor(props) {
     super(props);
@@ -33,6 +33,7 @@ class App extends Component {
     };
   }
 
+  /** Render an array of VendorTiles, for the main search page */
   renderTiles = () => {
     const { data } = this.state;
     return data.map((d, i) => (
@@ -46,6 +47,7 @@ class App extends Component {
     ));
   }
 
+  /** Navigation functions */
   handleBackToDetailPage = () => {
     this.setState({
       view: VIEW.DETAIL,
@@ -63,6 +65,16 @@ class App extends Component {
     this.setState({ view: VIEW.ADD });
   }
 
+  handleBack = () => {
+    this.setState({
+      view: VIEW.SEARCH,
+    });
+  }
+
+  /**
+   * Handle the submit from an input field,
+   * and trigger the firebase query
+   */
   handleSubmit = (e) => {
     e.preventDefault();
     this.setState({
@@ -72,12 +84,14 @@ class App extends Component {
     this.searchDB();
   }
 
+  /** handle typed changes to the search box */
   handleChange = (e) => {
     this.setState({
       searchString: e.target.value
     });
   }
 
+  /** Clear the search box and any retrieved data */
   handleClear = () => {
     this.setState({
       data: [],
@@ -87,12 +101,7 @@ class App extends Component {
     document.getElementById('formGroupExampleInput').focus();
   }
 
-  handleBack = () => {
-    this.setState({
-      view: VIEW.SEARCH,
-    });
-  }
-
+  /** Query the firebase database and save the result to the state */
   searchDB = () => {
     const { searchString } = this.state;
     window.db

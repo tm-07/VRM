@@ -1,5 +1,8 @@
 import React from 'react';
 
+/**
+ * Form page for adding new history about a vendor
+ */
 const AddNewDonation = ({ handleBack }) => {
   return (
     <div className="details-page">
