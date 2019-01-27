@@ -4,8 +4,9 @@ import React from 'react';
  * Render a Tile containing basic vendor information
  *
  */
-const VendorTile = ({ vendor }) => {
-  const { name = '',
+const VendorTile = ({ vendor, onClick }) => {
+  const {
+    name = '',
     address = '',
     updated = '',
     status = '',
@@ -28,11 +29,20 @@ const VendorTile = ({ vendor }) => {
           <p>{address}</p>
           {/* <p>{address.city}, {address.state} {address.zip}</p> */}
         </div>
-        <div className="col-sm-8">
+        <div className="col-sm-4">
           <h6>Primary Contact</h6>
           <p>Name: {contactName}</p>
           <p>Phone: {phone}</p>
           <p>Email: {email}</p>
+        </div>
+        <div className="col-sm-1">
+          <button
+            type="button"
+            className="btn btn-primary"
+            onClick={onClick}
+          >
+            Details
+          </button>
         </div>
       </div>
     </div>
