@@ -9,7 +9,7 @@ class App extends Component {
       introPage: true,
       displayPage: false,
       searchString: '',
-      data: {}
+      data: []
     };
   }
 
@@ -39,32 +39,36 @@ class App extends Component {
 
   searchDB = () => {
     let inputText = this.state.searchString;
-    window.db.collection("business-collection").where("category", "==", inputText)
-        .get()
-        .then((querySnapshot) => {
-            this.setState({
-              data: querySnapshot.docs
-            });
-            querySnapshot.forEach(function (doc) {
-                // David render card with data
-                console.log(doc);
-            });
-        })
-        .catch(function (error) {
-            console.log("Error getting documents: ", error);
+    window.db
+      .collection("business-collection")
+      .where("category", "==", inputText)
+      .get()
+      .then((querySnapshot) => {
+        const data = [];
+        querySnapshot.forEach((doc) => {
+          // David render card with data
+          console.log(doc.data());
+          data.push(doc.data());
         });
-}
+        this.setState({
+          data,
+        });
+      })
+      .catch(function (error) {
+        console.log("Error getting documents: ", error);
+      });
+  }
 
   renderIntroPage() {
     return (
       <>
-        {this.state.introPage ? 
+        {this.state.introPage ?
           <div className="intro-page">
             <p className="form-title">
               Vendor Relationship Manager
             </p>
             <div className="intro-search">
-              <img 
+              <img
                 src={require('./images/Make-A-Wish_small_logo.png')}
                 className="medium-logo"
                 alt="logo"
@@ -98,7 +102,7 @@ class App extends Component {
         {this.state.displayPage ?
           <div className="display-page">
             <div className="small-search">
-              <img 
+              <img
                 src={require('./images/Make-A-Wish_small_logo.png')}
                 className="small-logo"
                 alt="logo"
