@@ -15,19 +15,29 @@ class App extends Component {
     super(props);
     this.state = {
       searchString: '',
-      data: []
+      currentSearch: '',
+      data: [],
+      placeholder: "Find a vendor...",
     };
+  }
+
+  componentDidMount = () => {
+    document.getElementById('formGroupExampleInput').focus();
   }
 
   renderTiles = () => {
     const { data } = this.state;
     return data.map((d, i) => (
       <VendorTile vendor={d} key={i} />
-    ))
+    ));
   }
 
   handleSubmit = (e) => {
     e.preventDefault();
+    this.setState({
+      currentSearch: this.state.searchString,
+      searchString: ''
+    });
     this.searchDB();
   }
 
@@ -35,6 +45,15 @@ class App extends Component {
     this.setState({
       searchString: e.target.value
     });
+  }
+
+  handleClear = () => {
+    this.setState({
+      data: [],
+      searchString: '',
+      currentSearch: '',
+    });
+    document.getElementById('formGroupExampleInput').focus();
   }
 
   searchDB = () => {
@@ -52,6 +71,11 @@ class App extends Component {
         });
         this.setState({
           data,
+        });
+      })
+      .then(() => {
+        this.setState({
+          placeholder: "Find a vendor..."
         });
       })
       .catch(function (error) {
@@ -74,19 +98,30 @@ class App extends Component {
               height="36"
               width="36"
             />
-
             <form onSubmit={this.handleSubmit}>
               <div className="form-group">
                 <input
                   type="text"
                   className="form-control"
                   id="formGroupExampleInput"
-                  placeholder="Find a vendor..."
+                  placeholder={this.state.placeholder}
                   onChange={this.handleChange}
+                  value={this.state.searchString}
                 />
               </div>
             </form>
+            <button
+              className="clear-button"
+              onClick={this.handleClear}
+            >
+              Clear
+            </button>
           </div>
+          {this.state.currentSearch !== '' ?
+            <p>Results for: {this.state.currentSearch}</p>
+            :
+            null
+          }
           {this.renderTiles()}
         </div>
       </main>
