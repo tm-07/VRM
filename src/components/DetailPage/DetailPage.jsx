@@ -45,7 +45,7 @@ const DetailPage = ({
       <div className="contributions">
         <div className="flex-row">
           <h2>Contribution History</h2>
-          <button className="btn btn-primary" onClick={onClick}>+ Add New Donation</button>
+          <button className="btn btn-primary" onClick={onClick}>+ Add New Contribution</button>
         </div>
         <div className="contribution table">
           <table className="table">
